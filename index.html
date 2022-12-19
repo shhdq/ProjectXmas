@@ -25,6 +25,8 @@
                         brightRed: '#EE4B2B',
                         grey: '#808080',
                         lightSlateGrey: '#778899',
+                        cosmicLatte: '#fff8e7',
+                        beige:'#F5F5DC',
                     }
                 }
             }
@@ -33,22 +35,25 @@
 </head>
 
 <body>
+    <div class="bg-cosmicLatte">
 <!--nav-->
-<nav class="relative container  mx-auto p-2 ">
+<nav class="sticky top-0 mx-auto p-1 bg-red-400 w-full">
     <!--flex container-->
     <div class="flex flex-wrap items-center justify-between">
         <!--nos/logo-->
-        <div class="pt-3 font-bold text-goldenRod text-2xl flex items-center">
-            <img src="assets/images/snowman.svg" alt="snowman" class="h-12 w-12">
+        <div class="p-2 font-bold text-goldenRod text-2xl flex items-center ">
+            <img src="assets/images/snowman.svg" alt="snowman" class="h-11 w-11">
             <span>ProjectXmas</span>
         </div>
         <!--Menu-->
           <div class="hidden md:flex space-x-6 ">
-            <a href="#home" class="hover:text-goldenRod">Home</a>
-            <a href="#game" class="hover:text-goldenRod">Play</a>
-            <a href="#about" class="hover:text-goldenRod">About us</a>
+            <a href="#home" class="hover:text-goldenRod font-bold">Home</a>
+            <a href="#lauks" class="hover:text-goldenRod font-bold">Play</a>
+            <a href="#about" class="hover:text-goldenRod font-bold">About us</a>
           </div>
 
+
+          
           <!--hamburger icon-->
           <button id="menu-btn" class="block hamburger md:hidden focus:outline-none">
             <div class="space-y-1.5">
@@ -57,17 +62,26 @@
             <span class="block w-8 h-0.5 bg-gray-600"></span>
         </div>
           </button>
+          
     </div> 
     
     <!--Mobile menu-->
     <div class="md:hidden">
         <div id="menu" class="abosolute  flex-col items-center self-end hidden py-4 mt-4 space-y-5 font-bold bg-white sm:w-auto sm:self-center left-6 right 6">
             <a href="#home" class="hover:text-goldenRod">Home</a>
-            <a href="#game" class="hover:text-goldenRod">Play</a>
+            <a href="#lauks" class="hover:text-goldenRod">Play</a>
             <a href="#about" class="hover:text-goldenRod">About Us</a>
         </div>
     </div>
+
 </nav>
+
+<!--audio-->
+<div id="myAudio" class="flex flex-col md:flex-row justify-center mx-auto md:w-1/2 md:items-center">
+    <audio  >
+        <source src="assets/sounds/christmas.mp3">
+    </audio>
+  </div>
 
 <section id="">
     <!--flex container-->
@@ -79,8 +93,8 @@
               </h1>
               <h2 class="max-w-md text-2xl font-bold text-center md:text-4xl md:text-left font-mount">Merry Christmas</h2>
               <!--Button-->
-              <div class="flex justify-center md:justify-start"  >
-                <a href="#" 
+              <div class="flex justify-center md:justify-start">
+                <a href="#lauks" 
                 class="p-3 px-6 pt-2 text-white bg-brightRed rounded-full baseline hover:bg-goldenRod sm:flex sm:justify-center">Let's play</a>
             </div>
         </div>
@@ -94,17 +108,9 @@
     
     
 </section>
-
-    <!--About-->
-    <footer class="bg-lightSlateGrey" id="about">
-        <!--Foot Container-->
-        <div class="container flex flex-col-reverse justify-between px-6 py-10 mx-auto space-y-8 md:flex-row md:space-y-0">
-            <!--About Us-->
-            <a href="https://www.flaticon.com/free-icons/christmas" title="christmas icons" >Christmas icons created by Freepik - Flaticon</a>
-        </div>
-    </footer>
-
+</div>
     <script src="./js/app.js"></script>
+
 </body>
 
 </html>
