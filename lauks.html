@@ -47,10 +47,10 @@
         </div>
         <!--Menu-->
           <div class="hidden md:flex space-x-6 ">
-            <a href="index.html" class="hover:text-goldenRod font-bold text-white">Home</a>
-            <a href="lauks.html" class="hover:text-goldenRod font-bold text-white">Play</a>
-            <a href="score.html" class="hover:text-goldenRod font-bold text-white">Score</a>
-            <a href="about_page.html" class="hover:text-goldenRod font-bold text-white">About us</a>
+            <a href="index.html" class="hover:text-goldenRod text-white">Home</a>
+            <a href="lauks.html" class="hover:text-goldenRod text-white">Play</a>
+            <a href="score.html" class="hover:text-goldenRod text-white">Score</a>
+            <a href="about_page.html" class="hover:text-goldenRod text-white">About Us</a>
           </div>
 
 
@@ -78,40 +78,19 @@
 
 </nav>
 
-<!--audio-->
-<div id="myAudio" class="flex flex-col md:flex-row justify-center mx-auto md:w-1/2 md:items-center">
-    <audio  >
-        <source src="assets/sounds/christmas.mp3">
-    </audio>
-  </div>
-
-<section id="">
-    <!--flex container-->
-    <div class="container flex flex-col-reverse md:flex-row items-center px-6 mx-auto mt-10 space-y-0 md:space-y-0">
-        <!--Left items-->
-        <div class="flex flex-col mb-32 space-y-14 md:w-1/2">
-            <h1 class="max-w-md text-5xl font-bold text-center md:text-7xl md:text-left font-mount">
-                ProjectXmas presents simple snake game
-              </h1>
-              <h2 class="max-w-md text-2xl font-bold text-center md:text-4xl md:text-left font-mount">Merry Christmas</h2>
-              <!--Button-->
-              <div class="flex justify-center md:justify-start">
-                <a href="lauks.html" 
-                class="p-3 px-6 pt-2 text-white bg-brightRed rounded-full baseline hover:bg-goldenRod sm:flex sm:justify-center">Let's play</a>
-            </div>
-        </div>
-
-        <!--Santa img-->
-      <div class="max-w-1/2">
-          <img src="assets/images/santa.svg" alt="santa">
-
-      </div>
+<!--flex container-->
+    <div class="flex flex-col md:flex-row justify-center mx-auto md:w-1/2 md:items-center pt-10 ">
+        <h1 class="text-goldenRod font-bold font-mount text-5xl text-center">Snake game</h1>
     </div>
-    
-    
-</section>
+
+<!--Canvas-->
+  <div class="flex flex-col md:flex-row justify-center mx-auto md:w-1/2 md:items-center p-5">
+    <canvas id="game" width="400" height="400"/>
+    </canvas>
+  </div>
 </div>
     <script src="./js/app.js"></script>
+    
 
 </body>
 

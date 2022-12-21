@@ -9,7 +9,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
-            theme: {
+            theme:{
                 screens: {
                     sm: '480px',
                     md: '768px',
@@ -42,15 +42,15 @@
     <div class="flex flex-wrap items-center justify-between">
         <!--nos/logo-->
         <div class="p-2 font-bold text-goldenRod text-2xl flex items-center ">
-            <img src="assets/images/snowman.svg" alt="snowman" class="h-11 w-11">
-            <span>ProjectXmas</span>
+            <img src="assets/images/tree.svg" alt="snowman" class="h-11 w-11">
+            <span class="text-green-700">Project</span><span class="text-red-700">Xmas</span>
         </div>
         <!--Menu-->
           <div class="hidden md:flex space-x-6 ">
-            <a href="index.html" class="hover:text-goldenRod font-bold text-white">Home</a>
-            <a href="lauks.html" class="hover:text-goldenRod font-bold text-white">Play</a>
-            <a href="score.html" class="hover:text-goldenRod font-bold text-white">Score</a>
-            <a href="about_page.html" class="hover:text-goldenRod font-bold text-white">About us</a>
+            <a href="index.html" class="hover:text-goldenRod text-white">Home</a>
+            <a href="lauks.html" class="hover:text-goldenRod text-white">Play</a>
+            <a href="score.html" class="hover:text-goldenRod text-white">Score</a>
+            <a href="about_page.html" class="hover:text-goldenRod text-white">About Us</a>
           </div>
 
 
@@ -68,14 +68,17 @@
     
     <!--Mobile menu-->
     <div class="md:hidden">
-        <div id="menu" class="abosolute  flex-col items-center self-end hidden py-4 mt-4 space-y-5 font-bold bg-red-400 sm:w-auto sm:self-center left-6 right 6">
+        <div id="menu" class="abosolute  flex-col items-center self-end hidden py-4 mt-4 space-y-5 font-bold bg-green-200 sm:w-auto sm:self-center left-6 right 6">
             <a href="index.html" class="hover:text-goldenRod text-white">Home</a>
             <a href="lauks.html" class="hover:text-goldenRod text-white">Play</a>
             <a href="score.html" class="hover:text-goldenRod text-white">Score</a>
             <a href="about_page.html" class="hover:text-goldenRod text-white">About Us</a>
         </div>
     </div>
-
+    <div class="flex ">
+        <img class=" flex absolute top-30 right-0 xl:w-56 lg:w-48 md:w-20 sm:w-10 sm:top-57" src="assets/images/santa.svg" alt="santa">
+        <img class="flex absolute top-30 left-0 xl:w-56 lg:w-48 md:w-20 sm:w-10 "  src="assets/images/snowman.svg" alt="snowman">
+    </div>
 </nav>
 
 <!--audio-->
@@ -89,22 +92,17 @@
     <!--flex container-->
     <div class="container flex flex-col-reverse md:flex-row items-center px-6 mx-auto mt-10 space-y-0 md:space-y-0">
         <!--Left items-->
-        <div class="flex flex-col mb-32 space-y-14 md:w-1/2">
-            <h1 class="max-w-md text-5xl font-bold text-center md:text-7xl md:text-left font-mount">
-                ProjectXmas presents simple snake game
-              </h1>
-              <h2 class="max-w-md text-2xl font-bold text-center md:text-4xl md:text-left font-mount">Merry Christmas</h2>
-              <!--Button-->
-              <div class="flex justify-center md:justify-start">
-                <a href="lauks.html" 
-                class="p-3 px-6 pt-2 text-white bg-brightRed rounded-full baseline hover:bg-goldenRod sm:flex sm:justify-center">Let's play</a>
-            </div>
-        </div>
-
-        <!--Santa img-->
-      <div class="max-w-1/2">
-          <img src="assets/images/santa.svg" alt="santa">
-
+        <div class="flex:flex-col space-y-14 md:w-100 relative">
+            <h1 class="max-w text-5xl font-bold text-center md:text-6xl md:text-left font-mount">Projektu veidoja - Riga coding school studenti:</h1>
+             <div>    
+                    <p class="text-xl md:text-xl sm:text-xl font-bold pb-5">Roberts Ašurkovs - Front end lead<br></p>
+                    <p class="text-xl md:text-xl sm:text-xl font-bold pb-5">Aivis Krūmiņš - Back end lead<br></p>
+                    <p class="text-xl md:text-xl sm:text-xl font-bold pb-5">Oskars Zvingulis - Back end developer<br></p>
+                    <p class="text-xl md:text-xl sm:text-xl font-bold pb-5">Ivans Lupaško - Tester<br></p>
+                    <p class="text-xl md:text-xl sm:text-xl font-bold pb-5">Marts Branks - Full stack<br></p>
+                    <p class="text-xl md:text-xl sm:text-xl font-bold pb-5">Roberts Martinsons - Project manager/Front end developer</p>
+                </div>
+                <a href="https://rigacoding.lv/"><img class="object-scale-down" src="assets/images/coding.svg" alt="coding"></a>
       </div>
     </div>
     
