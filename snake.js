@@ -29,8 +29,6 @@ let yVelocity = 0;
 
 let score = 0;
 
-const gulpSound = new Audio("gulp.mp3");
-
 //game loop
 function drawGame() {
   xVelocity = inputsXVelocity;
@@ -60,7 +58,6 @@ function drawGame() {
   if (score > 30) {
     speed = 20;
   }
-
 
   setTimeout(drawGame, 1000 / speed);
 }
@@ -158,7 +155,6 @@ function checkAppleCollision() {
     appleY = Math.floor(Math.random() * tileCount);
     tailLength++;
     score++;
-    gulpSound.play();
   }
 }
 
