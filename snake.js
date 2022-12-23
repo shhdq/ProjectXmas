@@ -38,6 +38,7 @@ let yVelocity = 0;
 
 let score = 0;
 
+
 //game loop
 function drawGame() {
   xVelocity = inputsXVelocity;
@@ -61,7 +62,14 @@ function drawGame() {
     speed = 9;
   }
   if (score > 20) {
+    ctx.font = "40px Verdana ";
+    var gradient = ctx.createLinearGradient(0, 0, canvas.width, 0);
+      gradient.addColorStop("0", " magenta");
+      gradient.addColorStop("0.5", "blue");
+      gradient.addColorStop("1.0", "red");
+      ctx.fillStyle = gradient;
     ctx.fillText("Līmenis iziets!", canvas.width / 6.5, canvas.height / 2);
+    setTimeout(function(){location.href="lauks2.html"} , 4000 );
     return
   }
   
