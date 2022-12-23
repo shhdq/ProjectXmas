@@ -1,3 +1,12 @@
+const btn = document.getElementById('menu-btn')
+const nav = document.getElementById('menu')
+
+btn.addEventListener('click', () => {
+    btn.classList.toggle('open')
+    nav.classList.toggle('flex')
+    nav.classList.toggle('hidden')
+})
+
 const canvas = document.getElementById("game");
 const ctx = canvas.getContext("2d");
 
@@ -48,16 +57,14 @@ function drawGame() {
 
   drawScore();
 
-  if (score > 5) {
-    speed = 7;
+  if (score > 10) {
+    speed = 9;
   }
-  if (score > 15) {
-    speed = 12;
+  if (score > 20) {
+    ctx.fillText("Līmenis iziets!", canvas.width / 6.5, canvas.height / 2);
+    return
   }
-
-  if (score > 30) {
-    speed = 20;
-  }
+  
 
   setTimeout(drawGame, 1000 / speed);
 }
@@ -119,20 +126,20 @@ function drawScore() {
 }
 
 function clearScreen() {
-  ctx.fillStyle = "black";
+  ctx.fillStyle = "lightblue";
   ctx.fillRect(0, 0, canvas.width, canvas.height);
 }
 
 function drawSnake() {
-  ctx.fillStyle = "green";
+  ctx.fillStyle = "white";
   for (let i = 0; i < snakeParts.length; i++) {
     let part = snakeParts[i];
     ctx.fillRect(part.x * tileCount, part.y * tileCount, tileSize, tileSize);
   }
 
-  snakeParts.push(new SnakePart(headX, headY)); //put an item at the end of the list next to the head
+  snakeParts.push(new SnakePart(headX, headY)); 
   while (snakeParts.length > tailLength) {
-    snakeParts.shift(); // remove the furthet item from the snake parts if have more than our tail size.
+    snakeParts.shift(); 
   }
 
   ctx.fillStyle = "orange";
