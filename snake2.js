@@ -88,12 +88,16 @@ function isGameOver() {
   //walls
   if (headX < 0) {
     gameOver = true;
+    localStorage.setItem("level-2", score);
   } else if (headX === tileCount) {
     gameOver = true;
+    localStorage.setItem("level-2", score);
   } else if (headY < 0) {
     gameOver = true;
+    localStorage.setItem("level-2", score);
   } else if (headY === tileCount) {
     gameOver = true;
+    localStorage.setItem("level-2", score);
   }
 
   for (let i = 0; i < snakeParts.length; i++) {

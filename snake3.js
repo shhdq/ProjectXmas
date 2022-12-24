@@ -60,20 +60,6 @@ function drawGame() {
   if (score > 10) {
     speed = 16;
   }
-  if (score > 30) {
-    ctx.font = "40px Verdana ";
-    var gradient = ctx.createLinearGradient(0, 0, canvas.width, 0);
-    gradient.addColorStop("0", " magenta");
-    gradient.addColorStop("0.5", "blue");
-    gradient.addColorStop("1.0", "red");
-    ctx.fillStyle = gradient;
-    ctx.fillText("Līmenis iziets!", canvas.width / 6.5, canvas.height / 2);
-    localStorage.setItem("level-3", score);
-    setTimeout(function () {
-      location.href = "lastpage.html";
-    }, 4000);
-    return;
-  }
 
   setTimeout(drawGame, 1000 / speed);
 }
@@ -88,12 +74,16 @@ function isGameOver() {
   //walls
   if (headX < 0) {
     gameOver = true;
+    localStorage.setItem("level-3", score);
   } else if (headX === tileCount) {
     gameOver = true;
+    localStorage.setItem("level-3", score);
   } else if (headY < 0) {
     gameOver = true;
+    localStorage.setItem("level-3", score);
   } else if (headY === tileCount) {
     gameOver = true;
+    localStorage.setItem("level-3", score);
   }
 
   for (let i = 0; i < snakeParts.length; i++) {
