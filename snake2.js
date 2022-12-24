@@ -1,11 +1,11 @@
-const btn = document.getElementById('menu-btn')
-const nav = document.getElementById('menu')
+const btn = document.getElementById("menu-btn");
+const nav = document.getElementById("menu");
 
-btn.addEventListener('click', () => {
-    btn.classList.toggle('open')
-    nav.classList.toggle('flex')
-    nav.classList.toggle('hidden')
-})
+btn.addEventListener("click", () => {
+  btn.classList.toggle("open");
+  nav.classList.toggle("flex");
+  nav.classList.toggle("hidden");
+});
 
 const canvas = document.getElementById("game");
 const ctx = canvas.getContext("2d");
@@ -63,15 +63,17 @@ function drawGame() {
   if (score > 25) {
     ctx.font = "40px Verdana ";
     var gradient = ctx.createLinearGradient(0, 0, canvas.width, 0);
-      gradient.addColorStop("0", " magenta");
-      gradient.addColorStop("0.5", "blue");
-      gradient.addColorStop("1.0", "red");
-      ctx.fillStyle = gradient;
+    gradient.addColorStop("0", " magenta");
+    gradient.addColorStop("0.5", "blue");
+    gradient.addColorStop("1.0", "red");
+    ctx.fillStyle = gradient;
     ctx.fillText("Līmenis iziets!", canvas.width / 6.5, canvas.height / 2);
-    setTimeout(function(){location.href="lauks3.html"} , 4000 );
-    return
+    localStorage.setItem("level-2", score);
+    setTimeout(function () {
+      location.href = "lauks3.html";
+    }, 4000);
+    return;
   }
-
 
   setTimeout(drawGame, 1000 / speed);
 }
@@ -128,8 +130,8 @@ function isGameOver() {
 
 function drawScore() {
   ctx.fillStyle = "white";
-  ctx.font = "10px Verdana";
-  ctx.fillText("Score " + score, canvas.width - 50, 10);
+  ctx.font = "20px Verdana";
+  ctx.fillText("Score " + score, canvas.width - 100, 40);
 }
 
 function clearScreen() {
@@ -209,3 +211,8 @@ function keyDown(event) {
 }
 
 drawGame();
+
+window.addEventListener("load", function () {
+  var audio = document.getElementById("myAudio");
+  audio.play();
+});
