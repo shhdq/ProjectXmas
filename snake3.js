@@ -210,6 +210,58 @@ function keyDown(event) {
   }
 }
 
+canvas.addEventListener("touchstart", handleTouchStart);
+canvas.addEventListener("touchmove", handleTouchMove);
+
+let xDown = null;
+let yDown = null;
+
+function handleTouchStart(event) {
+  xDown = event.touches[0].clientX;
+  yDown = event.touches[0].clientY;
+}
+
+function handleTouchMove(event) {
+  if (!xDown || !yDown) {
+    return;
+  }
+
+  let xUp = event.touches[0].clientX;
+  let yUp = event.touches[0].clientY;
+
+  let xDiff = xDown - xUp;
+  let yDiff = yDown - yUp;
+
+  if (Math.abs(xDiff) > Math.abs(yDiff)) {
+    if (xDiff > 0) {
+      // left swipe
+      if (inputsXVelocity == 1) return;
+      inputsYVelocity = 0;
+      inputsXVelocity = -1;
+    } else {
+      // right swipe
+      if (inputsXVelocity == -1) return;
+      inputsYVelocity = 0;
+      inputsXVelocity = 1;
+    }
+  } else {
+    if (yDiff > 0) {
+      // up swipe
+      if (inputsYVelocity == 1) return;
+      inputsYVelocity = -1;
+      inputsXVelocity = 0;
+    } else {
+      // down swipe
+      if (inputsYVelocity == -1) return;
+      inputsYVelocity = 1;
+      inputsXVelocity = 0;
+    }
+  }
+
+  xDown = null;
+  yDown = null;
+}
+
 drawGame();
 
 window.addEventListener("load", function () {
